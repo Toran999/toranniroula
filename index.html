@@ -1,179 +1,344 @@
-<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <!DOCTYPE html>
-<html lang="en-US">
-    <!--<![endif]-->
+<html>
+<head>
+     <meta content="max-width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	 <link rel="stylesheet" href="css/font-awesome.min.css">
+	 
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    <head>
-        <meta charset="utf-8">
-        <title>
-            ToranBdrNiroula-Home
-        </title><!-- Behavioral Meta Data -->
-        <meta content="yes" name="apple-mobile-web-app-capable">
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"><!-- Core Meta Data -->
-        <meta content="ThemeWagon" name="author">
-        <meta content="The most spectacular coming soon template!" name="description">
-        <meta content="Comming Soon, Responsive, Landing Page, One Page" name="keywords"><!-- Open Graph Meta Data -->
-        <meta content="The most spectacular coming soon template!">
-        <meta content="ThemeWagon">
-        <meta content="ThemeWagon">
-        <meta content="website">
-        <meta content="index.html"><!-- Twitter Card Meta Data -->
-        <meta content="summary" name="twitter:card">
-        <meta content="@themewagon" name="twitter:site">
-        <meta content="@themewagon" name="twitter:creator">
-        <meta content="ThemeWagon" name="twitter:title">
-        <meta content="Imminent - The most spectacular coming soon template!" name="twitter:description">
+[class*="col-"] {
+  width: 100%;
+}
 
-        <link href="favicon.png" rel="shortcut icon" type="image/png">
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
 
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        
-        <!-- CSS -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,900' rel='stylesheet' type='text/css'><!-- Styles -->
-        <link href="css/loader.css" rel="stylesheet" type="text/css">
-        <link href="css/normalize.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <!--[if lt IE 9]>
-            <link rel="stylesheet" type="text/css" href="css/ie.css" />
-        <![endif]-->
-        <!-- Javascript -->
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
 
-        <script src="js/jquery.js"></script>
-    </head>
-    <body>
-        <div class="preloader">
-            <div class="loading">
-                <h2>
-                    Loading...
-                </h2>
-                <span class="progress"></span>
-            </div>
-        </div>
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-        <div class="wrapper">
-            <ul class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15" id="scene">
-                <li class="layer" data-depth="0.00">
-                </li>
-                <!-- BG -->
+body{
+	background-color: #99ddff;
+	max-height:100vh;
+	max-width:100vw;
+	overflow:hidden;
+	}
+	
+#wall{	
+	background-image:url(R.png);
+	background-size:contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	max-width:100%;
+	max-height:100%;
+	height:100%;
+	width:100%;
+	left: 0;
+	top:10%;
+	z-index:90;
+	display:block;
+	padding:0;
+	border:0;
+	margin:0;
+}
 
-                <li class="layer" data-depth="0.10">
-                    <div class="background">
-                    </div>
-                </li>
+#sun{
+	position: relative; 
+	top: 5vw; 
+	left:5vw; 
+	width: 10vw; 
+	height: 10vw;
+	border-radius: 50%; 
+	background-color: red; 
+	box-shadow: 0 0 50px 20px red; 
+    }
+	
+.layer{
+  background-image:url("images/flakes/depth4/flakes.png");
+  background-size:contain;
+  background-repeat: no-repeat;
+  display:block;
+  padding: 0;
+  margin: 0;
+  position:absolute;
+  z-index:100;
+  width:50vh;
+  height:50vh;
+}
+.l1{
+  top:10px;
+  left:10px;
+}
+.l2{
+  top:10px;
+  left:50vw;
+}
 
-                <!-- Hero -->
 
-                <li class="layer" data-depth="0.20">
-                    <div class="title">
-                        <h2>
-                            Toran Bahadur Niroula
-                        </h2>
-                        <span class="line"></span>
-                    </div>
-                </li>
 
-                <li class="layer" data-depth="0.30">
-                    <div class="hero">
-                        <h1 id="countdown">
-                            Welcome!
-                        </h1>
 
-                        <p class="sub-title">
-                            You may have to wait though!
-                        </p>
-                    </div>
-                </li>
-                <!-- Flakes -->
+@keyframes welcome {
+  0% {
+		opacity:1;
+  }
 
-                <li class="layer" data-depth="0.40">
-                    <div class="depth-1 flake1">
-                        <img alt="flake" src="images/flakes/depth1/flakes1.png">
-                    </div>
+  100% {
+		opacity:0;
+  }
+}
 
-                    <div class="depth-1 flake2">
-                        <img alt="flake" src="images/flakes/depth1/flakes2.png">
-                    </div>
+.title {
+	display: block;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	top: 10%;
+	font-size: 18px;
+	font-weight: 800;
+	line-height: 1em;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: white;
+}
 
-                    <div class="depth-1 flake3">
-                        <img alt="flake" src="images/flakes/depth1/flakes3.png">
-                    </div>
+.line {
+	display: block;
+	margin: 0 auto;
+	width: 60px;
+	height: 1px;
+	background: white;
+	margin-top: 10px;
+}
+#initial{
+	position:fixed;
+	left:0;
+	top:0;
+	color:white;
+	display:block;
+	background-color:black;
+	opacity:1;
+	z-index:1000;
+	height:100%;
+	width:100%;
+	padding: 40vh 0 40vh 0;
+	text-align:center;
+	display:block;
+	font-size: 50px;
+	line-height: 50px;
+	letter-spacing: initial;
+	font-weight: 100;
+	text-transform: uppercase;
+	animation: welcome 3s 0.5s 1 ;
+	}
 
-                    <div class="depth-1 flake4">
-                        <img alt="flake" src="images/flakes/depth1/flakes4.png">
-                    </div>
-                </li>
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  left: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
 
-                <li class="layer" data-depth="0.50">
-                    <div class="depth-2 flake1">
-                        <img alt="flake" src="images/flakes/depth2/flakes1.png">
-                    </div>
+#mySidenav a:hover {
+  left:0; /* On mouse-over, make the elements appear as they should */
+  z-index:100;
+}
 
-                    <div class="depth-2 flake2">
-                        <img alt="flake" src="images/flakes/depth2/flakes2.png">
-                    </div>
-                </li>
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 20px;
+  background-color: #04AA6D;
+  z-index:100;
+}
 
-                <li class="layer" data-depth="0.60">
-                    <div class="depth-3 flake1">
-                        <img alt="flake" src="images/flakes/depth3/flakes1.png">
-                    </div>
+#blog {
+  top: 80px;
+  background-color: #2196F3; /* Blue */
+  z-index:100;
+}
 
-                    <div class="depth-3 flake2">
-                        <img alt="flake" src="images/flakes/depth3/flakes2.png">
-                    </div>
+#projects {
+  top: 140px;
+  background-color: #f44336; /* Red */
+  z-index:100;
+}
 
-                    <div class="depth-3 flake3">
-                        <img alt="flake" src="images/flakes/depth3/flakes3.png">
-                    </div>
+#literature {
+  top: 200px;
+  background-color: #555 ;/* Light Black */
+  z-index:100;
+}
 
-                    <div class="depth-3 flake4">
-                        <img alt="flake" src="images/flakes/depth3/flakes4.png">
-                    </div>
-                </li>
+.contact {
+	display: block;
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	text-align: center;
+	bottom: 5%;
+	  z-index:100;
+}
 
-                <li class="layer" data-depth="0.80">
-                    <div class="depth-4">
-                        <img alt="flake" src="images/flakes/depth4/flakes.png">
-                    </div>
-                </li>
+.contact .icons {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 18px;
+	text-align: center;
+	list-style: none;
+	list-style-type: none;
+	  z-index:100;
+}
 
-                <li class="layer" data-depth="1.00">
-                    <div class="depth-5">
-                        <img alt="flake" src="images/flakes/depth5/flakes.png">
-                    </div>
-                </li>
-                <!-- Contact -->
+.contact .icons li {
+	display: inline-block;
+	margin-right: 10px;
+	  z-index:100;
+}
 
-                <li class="layer" data-depth="0.20">
-                    <div class="contact">
-                        <ul class="icons">
-                            <li>
-                                <a class="facebook" href="https://www.facebook.com/toranbdrniroula/"><i class="fa fa-facebook"></i></a>
-                            </li>
+.contact .icons li:last-of-type { margin-right: 0px; }
 
-                            <li>
-                                <a class="linkedin" href="https://www.linkedin.com/in/toranbdrniroula/"><i class="fa fa-linkedin"></i></a>
-                            </li>
+.contact .icons li a {
+	display: block;
+	width: 25px;
+	height: 25px;
+	opacity: .5;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	color: white;
+	font-size: 24px;
+	  z-index:100;
+}
 
-                            <li>
-                                <a class="github" href="https://github.com/Toran999/"><i class="fa fa-github"></i></a>
-                            </li>
-                        </ul>
-                       
-                        <a class="mail" href="mailto:niroulasudeep001@gmail.com?subject=Hi%20Toran!">niroulasudeep001@gmail.com</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
- Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-        <!-- Javascript -->
-        <script src="js/plugins.js"></script> 
-        <script src="js/jquery.countdown.min.js"></script> 
-        <script src="js/main.js"></script>
 
-    </body>
+.contact .icons li a:hover {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.contact a.mail {
+	text-decoration: none;
+	color: white;
+	padding-bottom: 8px;
+	font-size: 15px;
+}
+
+.contact a.mail::after {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 125px;
+	margin-left: -60px;
+	margin-top: 10px;
+	height: 1px;
+	background: #666666;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.contact a.mail:hover::after, .contact a.mail:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+</style>
+</head>
+<body>
+<div id="initial">WELCOME</div>
+<div id="sun"></div>
+<div class="title">
+	<h2>
+		Toran Bahadur Niroula
+	</h2>
+	<span class="line"></span>
+</div>
+<div id="wall"></div>
+<div id="cloud">
+<div class="layer l1"></div>
+<div class="layer l2"></div>
+<div class="layer l2"></div>
+</div>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="about">About</a>
+  <a href="#" id="blog">Blog</a>
+  <a href="#" id="projects">Projects</a>
+  <a href="literature/diary.html" id="literature">Literature</a>
+  <a href="#" id="gallery">gallery</a>
+</div>
+
+<div class="contact">
+	<ul class="icons">
+		<li>
+			<a class="facebook" href="https://www.facebook.com/toranbdrniroula/"><i class="fa fa-facebook"></i></a>
+		</li>
+
+		<li>
+			<a class="linkedin" href="https://www.linkedin.com/in/toranbdrniroula/"><i class="fa fa-linkedin"></i></a>
+		</li>
+
+		<li>
+			<a class="github" href="https://github.com/Toran999/"><i class="fa fa-github"></i></a>
+		</li>
+	</ul>
+   
+	<a class="mail" href="mailto:niroulasudeep001@gmail.com?subject=Hi%20Toran!">niroulasudeep001@gmail.com</a>
+</div>
+<script>
+setTimeout(hide,3000);
+function hide()
+{
+	document.getElementById("initial").style.display="none";
+
+}
+var time=new Date().getHours();
+if(time>=18||time<=6){
+	var sun=document.getElementById("sun");
+	sun.style.backgroundColor="white";
+	sun.style.boxShadow="0 0 50px 20px white";
+	document.body.style.backgroundColor="#000033";
+	document.getElementsByClassName("l1")[0].style.backgroundImage='url("images/flakes/depth4/cloud.png")';
+}
+</script>
+
+</body>
 </html>
